@@ -1,0 +1,48 @@
+{
+  "name": "zipora",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build",
+    "check:esm": "rm -rf .esm-check && tsc -p tsconfig.server.json && node scripts/check-esm.mjs",
+    "dev": "vite",
+    "preview": "vite preview",
+    "build:engine": "vite build --config vite.engine.config.ts",
+    "build:e2e": "rm -rf .e2e-build && tsc -p tsconfig.e2e.json",
+    "e2e": "npm run build && npm run build:e2e && node scripts/e2e.mjs",
+    "test:e2e": "npm run e2e"
+  },
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "lucide-react": "^1.72.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "@sparticuz/chromium": "^153.0.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.10",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  },
+  "description": "ZIPORA \u2014 Deploy Anything. Anywhere. Deploy ZIP archives to GitHub as a single reviewed commit.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
