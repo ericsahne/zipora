@@ -1,8 +1,0 @@
-node_modules
-dist
-.esm-check
-.bench
-dist-engine
-.e2e-build
-test-results
-playwright-report
