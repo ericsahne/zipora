@@ -186,7 +186,7 @@ describe('server configuration at runtime', () => {
   it('the Vercel entry files load and export handlers', async () => {
     const mods = await Promise.all([
       import('../../api/auth/login.js'), import('../../api/auth/callback.js'), import('../../api/auth/session.js'),
-      import('../../api/auth/logout.js'), import('../../api/github/[...path].js'),
+      import('../../api/auth/logout.js'), import('../../api/auth/diagnose.js'), import('../../api/github.js'),
     ]);
     for (const m of mods) expect(typeof m.default).toBe('function');
   });
